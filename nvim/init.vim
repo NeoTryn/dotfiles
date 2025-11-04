@@ -36,6 +36,7 @@ set tabstop=4
 set shiftwidth=4
 
 nnoremap <A-t> :NERDTreeToggle <CR>
+nnoremap <A-f> :NERDTreeFocuse <CR>
 
 nnoremap <C-i> :PlugInstall <CR>
 nnoremap <C-u> :PlugUpdate <CR>
