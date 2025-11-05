@@ -24,8 +24,6 @@ require'nvim-treesitter.configs'.setup {
 	},
 }
 
-
-
 EOF
 
 syntax on
