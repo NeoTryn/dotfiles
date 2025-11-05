@@ -2,7 +2,7 @@ call plug#begin()
 
 	Plug 'nvim-treesitter/nvim-treesitter'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	Plug 'eldritch-theme/eldritch.nvim'
+	"Plug 'eldritch-theme/eldritch.nvim'
 	Plug 'preservim/nerdtree'
 	Plug 'vim-airline/vim-airline'
 	Plug 'maxmx03/fluoromachine.nvim'
@@ -20,9 +20,11 @@ require'nvim-treesitter.configs'.setup {
 	auto_install = true,
 
 	highlight = {
-		enable = true,
+	enable = true,
 	},
 }
+
+
 
 EOF
 
@@ -36,17 +38,20 @@ set tabstop=4
 set shiftwidth=4
 
 nnoremap <A-t> :NERDTreeToggle <CR>
-nnoremap <A-f> :NERDTreeFocuse <CR>
+nnoremap <A-f> :NERDTreeFocus <CR>
 
 nnoremap <C-i> :PlugInstall <CR>
 nnoremap <C-u> :PlugUpdate <CR>
 nnoremap <C-c> :PlugClean <CR>
 
 "if &filetype ==# 'vim'
-	inoremap { {}
-	inoremap ( ()
-	inoremap [ []
+	inoremap { {}<left>
+	inoremap ( ()<left>
+	inoremap [ []<left>
 "endif
+
+inoremap " ""<left>
+inoremap ' ''<left>
 
 " keybind to echo filetype
 " nnoremap <C-e> :echo type(&filetype) <CR>
