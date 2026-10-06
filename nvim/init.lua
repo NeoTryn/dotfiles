@@ -18,13 +18,21 @@ vim.lsp.config['lua-server'] = {
 
 vim.lsp.config['typst-server'] = {
 
-	cmd = {'tinymist'},
-	filetyps = { 'typst' },
+	cmd = { 'tinymist' },
+	filetypes = { 'typst' },
+	root_dir = vim.fs.dirname(vim.fs.find({'.git'}, { upward = true})[1]),
+}
+
+vim.lsp.config['c-cpp-server'] = {
+
+	cmd = { 'clangd' },
+	filetypes = { 'c', 'cpp' },
 	root_dir = vim.fs.dirname(vim.fs.find({'.git'}, { upward = true})[1]),
 }
 
 vim.lsp.enable('lua-server')
 vim.lsp.enable('typst-server')
+vim.lsp.enable('c-cpp-server')
 vim.lsp.codelens.enable()
 
 vim.api.nvim_create_autocmd('LspAttach', {
