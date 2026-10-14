@@ -109,3 +109,9 @@ hl.bind("SUPER + down", hl.dsp.focus({ direction = "down" }))
 hl.on("hyprland.start", function()
 	hl.exec_cmd("hyprsunset & waybar & hyprpaper")
 end)
+
+for i = 1, 10 do
+	local key = i % 10
+    hl.bind("SUPER + " .. key, hl.dsp.focus({ workspace = i }))
+    hl.bind("SUPER + SHIFT + " .. key, hl.dsp.window.move( {workspace = i }))
+end
